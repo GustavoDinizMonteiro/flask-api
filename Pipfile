@@ -16,3 +16,6 @@ flask-marshmallow = "*"
 
 [requires]
 python_version = "3.6"
+
+[scripts]
+deploy = "gunicorn --bind 0.0.0.0:5000 app:app"
