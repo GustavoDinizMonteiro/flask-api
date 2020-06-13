@@ -5,9 +5,10 @@ from bookmark.models.category import Category, dump
 
 categories_resource = Blueprint('categories', __name__)
 
+
 @categories_resource.route('', methods=['POST'])
 def create():
-    category = Category(name = request.json.get('name'))
+    category = Category(name=request.json.get('name'))
     session.add(category)
     session.commit()
     return dump(category)
@@ -23,4 +24,3 @@ def get():
 def get_by_id(id):
     query = session.query(Category).get(id)
     return dump(query)
-
