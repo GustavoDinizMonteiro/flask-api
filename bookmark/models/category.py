@@ -2,6 +2,7 @@ from .base import Model
 from sqlalchemy import Integer, String, Column
 from dataclasses import dataclass
 
+
 @dataclass
 class Category(Model):
     __tablename__ = 'category'

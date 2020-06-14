@@ -16,4 +16,10 @@ def create():
 @books_recource.route('', methods=['GET'])
 def list():
     books = session.query(Book).all()
-    return jsonify({ 'books': books })
+    return jsonify({'books': books})
+
+
+@books_recource.route('/<id>', methods=['GET'])
+def get_by_id(id):
+    book = session.query(Book).get(id)
+    return jsonify(book)

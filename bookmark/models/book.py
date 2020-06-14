@@ -8,6 +8,7 @@ from sqlalchemy import (
 from .base import Model
 from .category import Category
 
+
 @dataclass
 class Book(Model):
     __tablename__ = 'book'
@@ -26,4 +27,3 @@ class Book(Model):
         return '<id: {} - name: {} - category: {}>'.format(
             self.id, self.title, self.category_id
         )
-
