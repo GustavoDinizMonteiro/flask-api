@@ -10,7 +10,7 @@ def create():
     book = Book(**request.get_json())
     session.add(book)
     session.commit()
-    return book
+    return jsonify(book)
 
 
 @books_recource.route('', methods=['GET'])
