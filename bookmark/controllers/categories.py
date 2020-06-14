@@ -1,4 +1,3 @@
-import os
 from flask import Blueprint, jsonify, request
 from bookmark.models import session
 from bookmark.models.category import Category, dump

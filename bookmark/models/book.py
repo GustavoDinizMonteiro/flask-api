@@ -6,6 +6,7 @@ from sqlalchemy import (
     Boolean, ForeignKey, DateTime
 )
 from .base import Model
+from .category import CategorySchema
 
 
 class Book(Model):
@@ -17,7 +18,7 @@ class Book(Model):
     author = Column(String(50), nullable=False)
 
     deleted = Column(Boolean, default=False)
-    created_date = Column(DateTime, onupdate=datetime.now)
+    created_date = Column(DateTime, default=datetime.now)
 
     category_id = Column(Integer, ForeignKey('category.id'))
     category = relationship('Category')
@@ -35,7 +36,7 @@ class BookSchema(Schema):
             'deleted', 'created_date', 'category_id'
         )
         model = Book
-
+        include_fk = True
 
 books_schema = BookSchema(many=True)
 book_schema = BookSchema()
