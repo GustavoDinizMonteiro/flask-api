@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from bookmark.models import session
-from bookmark.models.book import Book, dump
+from bookmark.models.book import Book
 
 books_recource = Blueprint('books', __name__)
 
@@ -10,10 +10,10 @@ def create():
     book = Book(**request.get_json())
     session.add(book)
     session.commit()
-    return dump(book)
+    return book
 
 
 @books_recource.route('', methods=['GET'])
 def list():
-    query = session.query(Book).all()
-    return jsonify({ 'books': dump(query) })
+    books = session.query(Book).all()
+    return jsonify({ 'books': books })
