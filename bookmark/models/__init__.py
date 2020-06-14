@@ -1,4 +1,5 @@
 from .category import Category
+from .book import Book
 from .base import Session, engine, Model
 
 session = Session()
