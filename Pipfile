@@ -23,5 +23,5 @@ python_version = "3.6"
 
 [scripts]
 deploy = "gunicorn --bind 0.0.0.0:5000 app:app"
-lint = "pycodestyle --first app.py bookmark/"
-lint-show = "pycodestyle --show-source --show-pep8 app.py bookmark/"
+lint = "pycodestyle --first app.py bookmark/ docs/"
+lint-show = "pycodestyle --show-source --show-pep8 app.py bookmark/ docs/"

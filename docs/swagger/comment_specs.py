@@ -1,4 +1,7 @@
+from .definitions import definitions
+
 create_specs = {
+  'tags': ['book', 'comment'],
   'parameters': [{
     'name': 'book_id',
     'in': 'path',
@@ -10,22 +13,13 @@ create_specs = {
     'schema': {
       'required': ['author', 'body'],
       'properties': {
-        'author': { 'type': 'string' },
-        'body': { 'type': 'string' },
+        'author': {'type': 'string'},
+        'body': {'type': 'string'},
       }
     }
   }],
   'definitions': {
-    'Comment': {
-      'type': 'object',
-      'properties': {
-        'id': { 'type': 'integer' },
-        'author': { 'type': 'string' },
-        'body': { 'type': 'string' },
-        'deleted': { 'type': 'boolean', 'default': False },
-        'timestamp': { 'type': 'string', 'default': 'timestamp' }
-      }
-    }
+    **definitions
   },
   'responses': {
     '200': {
