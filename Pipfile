@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 pycodestyle = "*"
+flasgger = "*"
 
 [packages]
 flask = "*"
@@ -15,6 +16,7 @@ sqlalchemy = "*"
 pg8000 = "*"
 dataclasses = "*"
 flask-compress = "*"
+flasgger = {file = "https://github.com/rochacbruno/flasgger/tarball/master"}
 
 [requires]
 python_version = "3.6"
