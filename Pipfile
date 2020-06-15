@@ -6,6 +6,9 @@ verify_ssl = true
 [dev-packages]
 pycodestyle = "*"
 flasgger = "*"
+pytest = "*"
+coverage = "*"
+pytest-cov = "*"
 
 [packages]
 flask = "*"
@@ -25,3 +28,5 @@ python_version = "3.6"
 deploy = "gunicorn --bind 0.0.0.0:5000 app:app"
 lint = "pycodestyle --first app.py bookmark/ docs/"
 lint-show = "pycodestyle --show-source --show-pep8 app.py bookmark/ docs/"
+test = "python -m pytest -p no:warnings"
+coverage = "python -m pytest -p no:warnings --cov=bookmark"
