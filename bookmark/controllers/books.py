@@ -10,6 +10,10 @@ books_recource = Blueprint('books', __name__)
 @books_recource.route('', methods=['POST'])
 @swag_from(create_specs)
 def create():
+    """
+    Create a new book.
+    ---
+    """
     book = Book(**request.get_json())
     session.add(book)
     session.commit()
@@ -19,5 +23,9 @@ def create():
 @books_recource.route('', methods=['GET'])
 @swag_from(list_specs)
 def list():
+    """
+    List all books.
+    ---
+    """
     books = session.query(Book).all()
     return jsonify({'books': books})

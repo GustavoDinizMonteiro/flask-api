@@ -9,6 +9,9 @@ categories_resource = Blueprint('categories', __name__)
 
 @categories_resource.route('', methods=['GET'])
 @swag_from(list_specs)
-def get():
+def list():
+    """
+    List all categories.
+    """
     categories = session.query(Category).all()
     return jsonify({'categories': categories})
