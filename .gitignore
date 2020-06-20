@@ -1,3 +1,4 @@
 *.db
 .pytest_cache
 htmlcov/
+.coverage
