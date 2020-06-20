@@ -12,6 +12,7 @@ env:
 install:
     - pip install pipenv
     - pipenv install
+    - pip install codecov
 
 cache: pip
 
