@@ -1,0 +1,9 @@
+[run]
+source =
+  bookmark
+
+[report]
+include =
+  bookmark/*
+omit =
+  tests/*

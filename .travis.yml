@@ -1,0 +1,24 @@
+language: python
+python:
+    - "3.5"
+    - "3.6"
+    - "3.7"
+    - "3.8"
+
+env:
+    global:
+        - PIPENV_DEV=true
+
+# command to install dependencies
+install:
+    - pip install pipenv
+    - pipenv install
+
+cache: pip
+
+# command to run tests and linter
+script:
+    - pipenv run lint
+    - pipenv run test
+after_success:
+    - codecov
