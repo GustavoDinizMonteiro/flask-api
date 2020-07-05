@@ -1,2 +1,26 @@
 -i https://pypi.org/simple
+attrs==19.3.0
+click==7.1.2
+coverage==5.1
+flask==1.1.2
+https://github.com/rochacbruno/flasgger/tarball/master#egg=flasgger
+importlib-metadata==1.6.1 ; python_version < '3.8'
+itsdangerous==1.1.0
+jinja2==2.11.2
+jsonschema==3.2.0
+markupsafe==1.1.1
+mistune==0.8.4
+more-itertools==8.4.0
+packaging==20.4
+pluggy==0.13.1
+py==1.8.1
 pycodestyle==2.6.0
+pyparsing==2.4.7
+pyrsistent==0.16.0
+pytest-cov==2.10.0
+pytest==5.4.3
+pyyaml==5.3.1
+six==1.15.0
+wcwidth==0.2.4
+werkzeug==1.0.1
+zipp==3.1.0

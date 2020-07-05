@@ -1,0 +1,31 @@
+version: "3"
+services:
+  database:
+    image: postgres:latest
+    network_mode: bridge
+    container_name: database
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    expose:
+    - 5432
+    ports:
+      - 5432:5432
+    environment:
+         - POSTGRES_PASSWORD=test
+         - POSTGRES_USER=test
+         - POSTGRES_DB=bookmark
+    restart: always
+# APP*****************************************
+  app:
+    image: gmonteiro/sheetgo-backend:latest
+    command: pipenv run deploy
+    ports:
+      - 3000:5000
+    environment:
+      - DB_URI='postgresql+pg8000://test:test@localhost:5432/bookmark'
+    restart: always
+    links:
+      - database
+
+volumes:
+    postgres-data:
