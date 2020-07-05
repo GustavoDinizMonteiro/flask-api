@@ -7,6 +7,8 @@ WORKDIR /root
 
 RUN pip install pipenv
 
+ENV PIPENV_VENV_IN_PROJECT 1
+
 # Cloning and install dependencies
 RUN \
     apt-get install git && \
@@ -19,3 +21,5 @@ RUN cd sheetgo-challenge-backend  && \
 
 # Define working directory.
 WORKDIR /root/sheetgo-challenge-backend
+
+CMD .venv/bin/gunicorn --bind 0.0.0.0:$PORT app:app
